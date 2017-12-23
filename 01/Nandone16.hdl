@@ -1,0 +1,22 @@
+CHIP Nandone16 {
+	IN in[16], sel;
+	OUT out[16];
+
+	PARTS:
+	Nand(a = in[0], b = sel, out = out[0]);
+	Nand(a = in[1], b = sel, out = out[1]);
+	Nand(a = in[2], b = sel, out = out[2]);
+	Nand(a = in[3], b = sel, out = out[3]);
+	Nand(a = in[4], b = sel, out = out[4]);
+	Nand(a = in[5], b = sel, out = out[5]);
+	Nand(a = in[6], b = sel, out = out[6]);
+	Nand(a = in[7], b = sel, out = out[7]);
+	Nand(a = in[8], b = sel, out = out[8]);
+	Nand(a = in[9], b = sel, out = out[9]);
+	Nand(a = in[10], b = sel, out = out[10]);
+	Nand(a = in[11], b = sel, out = out[11]);
+	Nand(a = in[12], b = sel, out = out[12]);
+	Nand(a = in[13], b = sel, out = out[13]);
+	Nand(a = in[14], b = sel, out = out[14]);
+	Nand(a = in[15], b = sel, out = out[15]);
+}

@@ -1,0 +1,10 @@
+CHIP Orone16 {
+	IN in[16], sel;
+	OUT out[16];
+
+	PARTS:
+	Not(in = sel, out = notsel);
+	Not16(in = in, out = notin);
+	Andone16(in = notin, sel = notsel, out = out1);
+	Not16(in = out1, out = out);
+}

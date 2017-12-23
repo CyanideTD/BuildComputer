@@ -1,0 +1,8 @@
+CHIP Andone16 {
+	IN in[16], sel;
+	OUT out[16];
+
+	PARTS:
+	Nandone16(in = in, sel = sel, out = nand16);
+	Not16(in = nand16, out = out);
+}
