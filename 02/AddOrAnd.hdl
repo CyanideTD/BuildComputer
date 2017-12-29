@@ -1,0 +1,37 @@
+CHIP AddOrAnd {
+	IN a[16], b[16], sel;
+	OUT out[16];
+
+	PARTS:
+		HalfAdder(a = a[0], b = b[0], sum = out[0], carry = carry0);
+        And(a = carry0, b = sel, out = carry00);
+        FullAdder(a = a[1], b = b[1], c = carry00, sum = out[1], carry = carry1);
+        And(a = carry1, b = sel, out = carry11);
+        FullAdder(a = a[2], b = b[2], c = carry11, sum = out[2], carry = carry2);
+        And(a = carry2, b = sel, out = carry22);
+        FullAdder(a = a[3], b = b[3], c = carry22, sum = out[3], carry = carry3);
+        And(a = carry3, b = sel, out = carry33);
+        FullAdder(a = a[4], b = b[4], c = carry33, sum = out[4], carry = carry4);
+        And(a = carry4, b = sel, out = carry44);
+        FullAdder(a = a[5], b = b[5], c = carry44, sum = out[5], carry = carry5);
+        And(a = carry5, b = sel, out = carry55);
+        FullAdder(a = a[6], b = b[6], c = carry55, sum = out[6], carry = carry6);
+        And(a = carry6, b = sel, out = carry66);
+        FullAdder(a = a[7], b = b[7], c = carry66, sum = out[7], carry = carry7);
+        And(a = carry7, b = sel, out = carry77);
+        FullAdder(a = a[8], b = b[8], c = carry77, sum = out[8], carry = carry8);
+        And(a = carry8, b = sel, out = carry88);
+        FullAdder(a = a[9], b = b[9], c = carry88, sum = out[9], carry = carry9);
+        And(a = carry9, b = sel, out = carry99);
+        FullAdder(a = a[10], b = b[10], c = carry99, sum = out[10], carry = carry10);
+        And(a = carry10, b = sel, out = carry101);
+        FullAdder(a = a[11], b = b[11], c = carry101, sum = out[11], carry = car11);
+        And(a = car11, b = sel, out = carry111);
+        FullAdder(a = a[12], b = b[12], c = carry111, sum = out[12], carry = car12);
+        And(a = car12, b = sel, out = carry121);
+        FullAdder(a = a[13], b = b[13], c = carry121, sum = out[13], carry = car13);
+        And(a = car13, b = sel, out = carry131);
+        FullAdder(a = a[14], b = b[14], c = carry131, sum = out[14], carry = car14);
+        And(a = car14, b = sel, out = carry141);
+        FullAdder(a = a[15], b = b[15], c = carry141, sum = out[15], carry = car15);
+}

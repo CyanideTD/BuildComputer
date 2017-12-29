@@ -43,4 +43,22 @@ CHIP ALU {
 
     PARTS:
    // Put you code here:
+        Not(in = zx, out = nzx);
+        Andone16(in = x, sel = nzx, out = ax);
+        Not(in = zy, out = nzy);
+        Andone16(in = y, sel = nzy, out = ay);
+        Xorone16(in = ax, sel = nx, out = axx);
+        Xorone16(in = ay, sel = ny, out = ayy);
+        And16(a = axx, b = ayy, out = out1);
+        Add16(a = axx, b = ayy, out = out2);
+        Andone16(in = out2, sel = f, out = out3);
+
+        Not(in = f, out = ff);
+        Andone16(in = out1, sel = ff, out = out4);
+        Or16(a = out3, b = out4, out = out5);
+        Xorone16(in = out5, sel = no, out = out6);
+
+        Or16Way(in = out6, out = zr, head = ng);
+
+        Or16(a = out6, b = out6, out = out);
 }
